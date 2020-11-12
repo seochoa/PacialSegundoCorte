@@ -1,0 +1,17 @@
+.navbar {
+    background-color: hsl(0, 0%, 100%);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#titulo {
+    color: rgb(236, 105, 18);
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    font-size: xx-large;
+}
+
+#opciones {
+    color: rgb(236, 105, 18);
+    font-family: cursive;
+}

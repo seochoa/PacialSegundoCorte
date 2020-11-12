@@ -1,0 +1,12 @@
+h3 {
+    color: rgb(236, 105, 18);
+    text-align: center;
+    font-family: 'Architects Daughter', cursive;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    display: block;
+    margin: auto;
+}
