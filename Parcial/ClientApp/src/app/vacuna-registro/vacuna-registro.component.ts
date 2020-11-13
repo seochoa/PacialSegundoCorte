@@ -32,5 +32,11 @@ export class VacunaRegistroComponent implements OnInit {
     });
   }
 
+  vacunar(personavacunar : Persona){
+    const menssageBox = this.modalService.open(FormulariovacunaComponent)
+    
+    menssageBox.componentInstance.personavacunar = personavacunar;
+  }
+
   
 }

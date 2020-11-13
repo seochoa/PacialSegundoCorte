@@ -34,7 +34,7 @@
                     <td><strong>{{persona.fechanac| date: 'medium'}}</strong></td>
                     <td><strong>{{persona.institucion}}</strong></td>
                     <td><strong>{{persona.nombreacudiente}}</strong></td>
-                    <td><strong><button type="button" id="vacuna" class="btn btn-outline-light">Registrar</button></strong></td>
+                    <td><strong><button type="button" id="vacuna" class="btn btn-outline-light" (click)="vacunar(persona)">Vacunar</button></strong></td>
 
                 </tr>
             </tbody>

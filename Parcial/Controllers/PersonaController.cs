@@ -43,6 +43,14 @@ namespace Parcial.Controllers
             var personas = _personaservice.ConsultarTodos().Select(p=>new PersonaViewModel(p));
             return personas;
         }
+        
+        [HttpPut]
+        public ActionResult<PersonaViewModel> update(PersonaInputModel personaInput){
+            Persona persona = MapearPersona(personaInput);
+            string mensaje = _personaservice.GuardarVacunas(persona);
+            return Ok(mensaje);
+        }
+        
 
         private Persona MapearPersona(PersonaInputModel personaInput){
             var Persona = new Persona

@@ -42,4 +42,12 @@ export class PersonaService {
         );
   }
 
+  postvacunas(persona: Persona):Observable<string>{
+    return this.http.put<string>(this.baseUrl + 'api/Persona', persona)
+    .pipe(
+      tap(_ => this.handleErrorService.log('datos enviados')),
+      catchError(this.handleErrorService.handleError<string>('Actualizar Persona', null))
+    );
+  }
+
 }

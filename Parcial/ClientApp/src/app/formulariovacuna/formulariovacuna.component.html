@@ -1,11 +1,52 @@
 <div class="modal-header animated fadeIn">
-    <h4 id="titulo" class="modal-title"><strong>La Persona Registrada Es:</strong></h4>
+    <h4 id="titulo" class="modal-title"><strong>La persona a vacunar es: {{personavacunar.nombre}}</strong></h4>
 </div>
 <div class="modal-body ">
-    <h4 id="body" class="modal-title"><strong>El Documento De la Persona Es:{{persona.documento}}</strong></h4>
-    <h4 id="body" class="modal-title"><strong>El TipoDocumento De la Persona Es:</strong></h4>
-    <h4 id="body" class="modal-title"><strong>La Fecha de Nacimiento De la Persona Es:</strong></h4>
-    <h4 id="body" class="modal-title"><strong>El Nombre De la Persona Es:</strong></h4>
-    <h4 id="body" class="modal-title"><strong>La institucion De la Persona Es:</strong></h4>
-    <h4 id="body" class="modal-title"><strong>El Nombre del Acudiente De la Persona Es:</strong></h4>
+    <br>
+    <h4 id="titulo" class="modal-title"><strong>Registrar Vacunas</strong></h4>
+    <form [formGroup]="formGroupVacuna">
+
+        <div class="col">
+            <p id="titulo" class="card-title"><strong>ID VACUNA</strong></p>
+            <input type="text" class="form-control" name="Idvacuna" placeholder="Id Vacuna" [ngClass]="{'is-invalid':control2.idvacuna.errors && control2.idvacuna.touched}" formControlName="idvacuna">
+            <div *ngIf=" control2.idvacuna.errors "  class="invalid-feedback ">
+                <div *ngIf="control2.idvacuna.errors.required ">
+                    Se requiere ID Vacuna
+                </div>
+            </div>
+        </div>
+
+        <div class="col ">
+            <p id="titulo " class="card-title "><strong>Tipo Vacuna</strong></p>
+            <select class="form-control " name="tipovacuna " id="tipovacuna " [ngClass]="{ 'is-invalid':control2.tipovacuna.errors && control2.tipovacuna.touched} " formControlName="tipovacuna">
+                <option >Haemophilus influenza tipo B, </option>
+                <option >Tdpa</option>
+                <option >DTPa</option>
+                <option >Hepatitis A</option>
+                <option >Hepatitis B</option>
+                <option >virus del papiloma Humano</option>
+            </select>
+            <div *ngIf="control2.tipovacuna.errors "  class="invalid-feedback ">
+                <div *ngIf="control2.tipovacuna.errors.required ">
+                    Se requiere Tipo Vacuna
+                </div>
+            </div>
+        </div>
+
+        <div class="col ">
+            <p id="titulo " class="card-title "><strong>FECHA VACUNA</strong></p>
+            <input type="date" class="form-control " name="fechavacuna " [ngClass]="{ 'is-invalid':control2.fechavacuna.errors && control2.fechavacuna.touched} " formControlName="fechavacuna">
+            <div *ngIf="control2.fechavacuna.errors "  class="invalid-feedback ">
+                <div *ngIf="control2.fechavacuna.errors.required ">
+                    Se requiere FechaVacuna
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="col ">
+        <button type="button " id="registrar " class="btn btn-primary" (click)="onSave()" [disabled]="formGroupVacuna.invalid">Registrar</button>
+        <button type="button " class="btn btn-secondary " (click)="activeModal.close( 'Close click')">Cancelar</button>
+    </div>
+
 </div>
