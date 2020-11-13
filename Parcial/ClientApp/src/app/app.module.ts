@@ -12,6 +12,8 @@ import { VacunaConsultaComponent } from './vacuna-consulta/vacuna-consulta.compo
 import { VacunaRegistroComponent } from './vacuna-registro/vacuna-registro.component';
 import { FormularioregistroComponent } from './formularioregistro/formularioregistro.component';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
+import { FormulariovacunaComponent } from './formulariovacuna/formulariovacuna.component';
+import { FiltropersonaPipe } from './pipes/filtropersona.pipe';
 
 
 
@@ -25,6 +27,8 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
     VacunaConsultaComponent,
     VacunaRegistroComponent,
     FormularioregistroComponent,
+    FormulariovacunaComponent,
+    FiltropersonaPipe,
   ],
   imports: [
     ReactiveFormsModule,
@@ -38,7 +42,7 @@ import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
     ]),
     NgbModule
   ],
-  entryComponents: [FormularioregistroComponent,AlertModalComponent],
+  entryComponents: [FormularioregistroComponent,AlertModalComponent,FormulariovacunaComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

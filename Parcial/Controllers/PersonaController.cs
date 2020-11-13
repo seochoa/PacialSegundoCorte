@@ -31,6 +31,19 @@ namespace Parcial.Controllers
             return Ok(response.Persona);
         }
 
+        [HttpGet("{idpersona}")]
+        public ActionResult<PersonaViewModel> get(string idpersona){
+            var persona = _personaservice.BuscarPorID(idpersona);
+            if(persona == null)return NotFound();
+            var personaView = new PersonaViewModel(persona);
+            return personaView;
+        }
+        [HttpGet]
+        public IEnumerable<PersonaViewModel> gets(){
+            var personas = _personaservice.ConsultarTodos().Select(p=>new PersonaViewModel(p));
+            return personas;
+        }
+
         private Persona MapearPersona(PersonaInputModel personaInput){
             var Persona = new Persona
             {

@@ -34,6 +34,17 @@ namespace Logica
             }
         }
 
+        public Persona BuscarPorID(string idpersona){
+            Persona persona = _context.Personas.Find(idpersona);
+            return persona;
+        }
+
+        public List<Persona> ConsultarTodos(){
+            List<Persona> personas = _context.Personas.ToList();
+            
+            return personas;
+        }
+
        
 
     }

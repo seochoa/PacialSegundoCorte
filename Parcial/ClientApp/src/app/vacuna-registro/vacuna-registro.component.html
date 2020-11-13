@@ -6,15 +6,39 @@
     <br>
 
     <div class="row">
-        <div class="col">
-            <form action="">
-                <input type="text" class="form-control" autocomplete="off" placeholder="Identificacion Persona">
-            </form>
-        </div>
-        <div class="col">
-            <button type="button" id="vacuna" class="btn btn-outline-light">Registrar Vacuna</button>
-        </div>
+        <input type="text" name="searchpersona" class="form-control" autocomplete="off" placeholder="Identificacion Persona" [(ngModel)]="searchpersona">
     </div>
     <img src="assets/parcial.svg">
+    <br>
+
+    <div class="container">
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th scope="col ">#</th>
+                    <th scope="col ">Documento</th>
+                    <th scope="col ">TipoDocumento</th>
+                    <th scope="col ">Nombre</th>
+                    <th scope="col ">FechaNacimiento</th>
+                    <th scope="col ">Institucion</th>
+                    <th scope="col ">Nombre Acudiente</th>
+                    <th scope="col ">Registrar Vacuna</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let persona of personas|filtropersona:searchpersona; index as i ">
+                    <th scope="row ">{{i+1}}</th>
+                    <td><strong>{{persona.documento}}</strong></td>
+                    <td><strong>{{persona.tipodocumeto}}</strong></td>
+                    <td><strong>{{persona.nombre}}</strong></td>
+                    <td><strong>{{persona.fechanac| date: 'medium'}}</strong></td>
+                    <td><strong>{{persona.institucion}}</strong></td>
+                    <td><strong>{{persona.nombreacudiente}}</strong></td>
+                    <td><strong><button type="button" id="vacuna" class="btn btn-outline-light">Registrar</button></strong></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </div>
