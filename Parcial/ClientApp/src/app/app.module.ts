@@ -14,6 +14,7 @@ import { FormularioregistroComponent } from './formularioregistro/formularioregi
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { FormulariovacunaComponent } from './formulariovacuna/formulariovacuna.component';
 import { FiltropersonaPipe } from './pipes/filtropersona.pipe';
+import { FiltrovacunaPipe } from './pipes/filtrovacuna.pipe';
 
 
 
@@ -29,6 +30,7 @@ import { FiltropersonaPipe } from './pipes/filtropersona.pipe';
     FormularioregistroComponent,
     FormulariovacunaComponent,
     FiltropersonaPipe,
+    FiltrovacunaPipe,
   ],
   imports: [
     ReactiveFormsModule,

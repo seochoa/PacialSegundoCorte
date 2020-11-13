@@ -1,1 +1,30 @@
-<p>vacuna-consulta works!</p>
+<div class="col-md-8 offset-md-2">
+    <h3>Numero de Estudiantes Vacunados: {{this.contador}}</h3>
+    <br>
+    <div class="row">
+        <input type="text" name="searchpersona" class="form-control" autocomplete="off" placeholder="Tipo Vacuna" [(ngModel)]="searchvacunas">
+    </div>
+    <br>
+    <div class="container">
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th scope="col ">#</th>
+                    <th scope="col ">IdVacuna</th>
+                    <th scope="col ">TipoVacuna</th>
+                    <th scope="col ">FechaVacunacion</th>
+                    <th scope="col ">EdadVacunacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vacuna of vacunas|filtrovacuna:searchvacunas; index as i ">
+                    <th scope="row ">{{i+1}}</th>
+                    <td><strong>{{vacuna.idvacuna}}</strong></td>
+                    <td><strong>{{vacuna.tipovacuna}}</strong></td>
+                    <td><strong>{{vacuna.fechavacuna}}</strong></td>
+                    <td><strong>{{vacuna.edadaplicacion}}</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
