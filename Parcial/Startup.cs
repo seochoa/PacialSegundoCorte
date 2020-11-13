@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using Datos;
+using Microsoft.EntityFrameworkCore;
 namespace parcial
 {
     public class Startup
@@ -22,6 +23,10 @@ namespace parcial
         {
             services.AddControllersWithViews();
             // Register the Swagger generator, defining 1 or more Swagger documents
+            // Configurar cadena de Conexion con EF
+            var connectionString=Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<PersonaContext>(p=>p.UseSqlServer(connectionString));
+
             services.AddSwaggerGen();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

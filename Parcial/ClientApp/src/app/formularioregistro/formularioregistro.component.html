@@ -1,0 +1,73 @@
+<div class="modal-header animated fadeIn">
+    <h4 id="titulo" class="modal-title"><strong>Registrar Persona</strong></h4>
+</div>
+
+<div class="modal-body ">
+    <form [formGroup]="formGroupPersona">
+        <div class="col">
+            <p id="titulo" class="card-title"><strong>Tipo IDENTIFICACION</strong></p>
+            <select class="form-control" name="tipoidentificacion" id="tipoidentificacion" [ngClass]="{'is-invalid':control.tipodocumeto.errors && control.tipodocumeto.touched}" formControlName="tipodocumeto">
+                <option >rc</option>
+                <option >ti</option>
+            </select>
+            <div *ngIf="control.tipodocumeto.errors"  class="invalid-feedback">
+                <div *ngIf="control.tipodocumeto.errors.required">
+                    Se requiere el tipo identificacion
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <p id="titulo" class="card-title"><strong>IDENTIFICACION</strong></p>
+            <input type="text" class="form-control" name="Identificacion" placeholder="Identificacion" [ngClass]="{'is-invalid':control.documento.errors && control.documento.touched}" formControlName="documento">
+            <div *ngIf="control.documento.errors"  class="invalid-feedback">
+                <div *ngIf="control.documento.errors.required">
+                    Se requiere identificacion
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <p id="titulo" class="card-title"><strong>NOMBRE</strong></p>
+            <input type="text" class="form-control" name="nombre" placeholder="Nombre" [ngClass]="{'is-invalid':control.nombre.errors && control.nombre.touched}" formControlName="nombre">
+            <div *ngIf="control.nombre.errors"  class="invalid-feedback">
+                <div *ngIf="control.nombre.errors.required">
+                    Se requiere Nombre
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <p id="titulo" class="card-title"><strong>FECHA NACIMIENTO</strong></p>
+            <input type="date" class="form-control" name="fechanac" [ngClass]="{'is-invalid':control.fechanac.errors && control.fechanac.touched}" formControlName="fechanac">
+        </div>
+
+        <div class="col">
+            <p id="titulo" class="card-title"><strong>INSTITUCION</strong></p>
+            <input type="text" class="form-control" name="institucion" placeholder="Institucion" [ngClass]="{'is-invalid':control.institucion.errors && control.institucion.touched}" formControlName="institucion">
+            <div *ngIf="control.institucion.errors"  class="invalid-feedback">
+                <div *ngIf="control.institucion.errors.required">
+                    Se requiere Institucion
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <p id="titulo" class="card-title"><strong>NOMBRE ACUDIENTE</strong></p>
+            <input type="text" class="form-control" name="nombreacudiente" placeholder="Nombre Acudiente" [ngClass]="{'is-invalid':control.nombreacudiente.errors && control.nombreacudiente.touched}" formControlName="nombreacudiente">
+            <div *ngIf="control.nombreacudiente.errors"  class="invalid-feedback">
+                <div *ngIf="control.nombreacudiente.errors.required">
+                    Se requiere Nombre Acudiente
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+    <div class="col ">
+        <button type="button " id="registrar " class="btn btn-primary" (click)="onSave()" [disabled]="formGroupPersona.invalid">Registrar</button>
+        <button type="button " class="btn btn-secondary " (click)="activeModal.close( 'Close click')">Cancelar</button>
+    </div>
+
+</div>

@@ -12,7 +12,5 @@ namespace Entidad
         public string Tipovacuna {get; set;}
         public DateTime Fechavacuna {get; set;}
         public int Edadaplicacion {get; set;}
-        [Column (TypeName = "nvarchar(20)")]
-        public Persona Personavacunada {get; set;}
     }
 }
